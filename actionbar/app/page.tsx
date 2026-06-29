@@ -66,7 +66,14 @@ export default function ExpandableActionBarPreview() {
   );
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-6 bg-[#090909]">
+    <div 
+      className="flex min-h-screen w-full flex-col items-center justify-center gap-6"
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('/bg.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div className="flex min-h-24 items-center justify-center">
         <ExpandableActionBar
           items={items}
@@ -84,7 +91,7 @@ export default function ExpandableActionBarPreview() {
         <motion.button
           type="button"
           onClick={() => setExpanded((current) => !current)}
-          className="relative flex h-9 w-[110px] items-center justify-center overflow-hidden rounded-full border border-white/[0.08] bg-white/[0.03] text-xs font-medium text-white/50 backdrop-blur-md transition-colors hover:border-white/20 hover:text-white"
+          className="relative flex h-9 w-[110px] items-center justify-center overflow-hidden rounded-full border border-white/[0.08] bg-black/40 text-xs font-medium text-white/50 backdrop-blur-md transition-colors hover:border-white/20 hover:text-white"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.96 }}
         >
